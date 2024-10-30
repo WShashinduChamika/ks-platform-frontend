@@ -43,7 +43,7 @@ function HomePage() {
     const getCourses = async () => {
         try {
             setLoading(true);
-            const response = await fetch(`${hostUrl}/course`, {
+            const response = await fetch(`http://54.252.166.219:3001/api/course`, {
                 method: "GET",
                 headers: {"Content-Type": "application/json"},
             });

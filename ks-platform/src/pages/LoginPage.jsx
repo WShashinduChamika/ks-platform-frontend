@@ -61,7 +61,7 @@ function LoginPage() {
 
     const checkAuthentication = async (userName, password) => {
         try {
-            const response = await fetch(`${hostUrl}/user/login`, {
+            const response = await fetch(`http://54.252.166.219:3001/api/user/login`, {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify({ userName, password })
