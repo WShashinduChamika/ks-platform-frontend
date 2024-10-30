@@ -1,0 +1,68 @@
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: blue;
+  transition: width 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Basic styles for input and label */
+.input-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  background-color: white; /* Optional, to hide overlapping of input field */
+  padding: 0 5px; /* Optional, for better spacing */
+  pointer-events: none; /* Prevent clicking the label */
+  color: #888;
+}
+
+/* When input is focused, move the label to the top */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #007bff; /* Change label color on focus */
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+.pulsing-div {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  /*position: static; !* Ensures the position is the default *!*/
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    background: #007bff;
+  }
+  50% {
+    opacity: 0.5;
+    background: #abcaec;
+  }
+}
